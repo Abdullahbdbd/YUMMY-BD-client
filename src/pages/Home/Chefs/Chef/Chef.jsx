@@ -10,7 +10,7 @@ const Chef = ({chef}) => {
             <p>Experience: {chef.experience_years}</p>
             <p>Number of recipes: {chef.num_recipes}</p>
             <p><FaHandPointRight /> {chef.likes}</p>
-            <Button className='fw-semibold' variant="outline-dark"> View Recipes Button</Button>
+            <Button className='fw-semibold' variant="outline-dark"> View Recipes</Button>
         </div>
     );
 };

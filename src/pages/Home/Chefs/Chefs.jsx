@@ -16,6 +16,7 @@ const Chefs = () => {
     return (
         <Container>
             <h1 className='text-center my-5'>OUR BD CHEFS </h1>
+           
             <div className='my-5 row row-cols-3'>
                 
                 {
@@ -25,6 +26,7 @@ const Chefs = () => {
                     ></Chef>)
                 }
             </div>
+                 <hr />
         </Container>
     );
 };

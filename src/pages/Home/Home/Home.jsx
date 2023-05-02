@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import Chefs from '../Chefs/Chefs';
+import PopularRecipes from './PopularRecipes/PopularRecipes';
+import Review from './PopularRecipes/Review/Review';
 
 const Home = () => {
     return (
@@ -18,8 +20,10 @@ const Home = () => {
                     </div>
                 </div>
 
-                
+
                 <Chefs></Chefs>
+                <PopularRecipes></PopularRecipes>
+                <Review></Review>
         </div>
     );
 };
