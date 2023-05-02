@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import { FaHandPointRight } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = () => {
     const chef = useLoaderData();
+    const [isDisabled, setDisabled] = useState(false);
+    const [isDisableds, setDisableds] = useState(false);
+    const [isDisabledss, setDisabledss] = useState(false);
+    const handleToast = () => {
+        if (handleToast) {
+            toast.success("Add to Favorite");
+            setDisabled(true);
+        }
+    }
+    const handleToasts = () => {
+        if (handleToasts) {
+            toast.success("Add to Favorite");
+            setDisableds(true);
+        }
+    }
+    const handleToastss = () => {
+        if (handleToastss) {
+            toast.success("Add to Favorite");
+            setDisabledss(true);
+        }
+    }
+
 
     return (
         <Container>
@@ -31,7 +55,8 @@ const Details = () => {
                                 <p className="card-text"><span className='fw-bold'>Ingredients:</span> {chef.ingredients}</p>
                                 <p className="card-text"><span className='fw-bold'>Method:</span> {chef.method}</p>
                                 <p className="card-text"><span className='fw-bold'>Rating:</span> {chef.rating}</p>
-                                <Button className='fw-bold' variant="outline-warning">Favorite</Button>
+                                <Button onClick={handleToast} disabled={isDisabled} className='fw-bold' variant="outline-warning">Favorite</Button>
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>
@@ -52,7 +77,8 @@ const Details = () => {
                                 <p className="card-text"><span className='fw-bold'>Ingredients:</span> {chef.ingredients}</p>
                                 <p className="card-text"><span className='fw-bold'>Method:</span> {chef.method}</p>
                                 <p className="card-text"><span className='fw-bold'>Rating:</span> {chef.rating}</p>
-                                <Button className='fw-bold' variant="outline-warning">Favorite</Button>
+                                <Button onClick={handleToasts} disabled={isDisableds} className='fw-bold' variant="outline-warning">Favorite</Button>
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>
@@ -73,12 +99,14 @@ const Details = () => {
                                 <p className="card-text"><span className='fw-bold'>Ingredients:</span> {chef.ingredients}</p>
                                 <p className="card-text"><span className='fw-bold'>Method:</span> {chef.method}</p>
                                 <p className="card-text"><span className='fw-bold'>Rating:</span> {chef.rating}</p>
-                                <Button className='fw-bold' variant="outline-warning">Favorite</Button>
+                                <Button onClick={handleToastss} disabled={isDisabledss} className='fw-bold' variant="outline-warning">Favorite</Button>
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
         </Container>
     );
