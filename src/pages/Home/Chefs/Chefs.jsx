@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Chef from './Chef/Chef';
-import { Link } from 'react-router-dom';
+
 
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
@@ -15,8 +15,9 @@ const Chefs = () => {
 
     return (
         <Container>
+            
             <h1 className='text-center my-5'>OUR BD CHEFS </h1>
-           
+           <hr />
             <div className='my-5 row row-cols-3'>
                 
                 {

@@ -5,7 +5,6 @@ import { FaFacebookSquare, FaInstagram, FaTwitter, FaYoutube } from 'react-icons
 const Footer = () => {
     return (
         <div>
-            
                 <div className='d-flex justify-content-around bg-warning p-5'>
 
                     <div>
