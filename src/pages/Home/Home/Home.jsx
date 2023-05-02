@@ -10,7 +10,7 @@ const Home = () => {
              <div className=' bg-warning'>
                     <div className='d-flex'>
                         <div className='my-auto ms-5'>
-                            <h1 className=''>OUR TEAM OF CHEFS</h1>
+                            <h1>OUR TEAM OF CHEFS</h1>
                             <p>Coming from wide range of hospitality and food service backgrounds,<br /> our Chefs make home cooking easy, healthier and exciting.Coming <br /> from wide range of hospitality and food service backgrounds, our  Chefs make home cooking easy.</p>
                             <Button className='fw-semibold' variant="outline-dark">Get Started</Button>
                         </div>

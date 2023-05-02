@@ -16,22 +16,64 @@ const Details = () => {
                     <h6>Number of recipes: {chef.num_recipes}</h6>
                     <h6><FaHandPointRight /> {chef.likes}</h6>
                     <p>{chef.bio}</p>
-                    <Button className='fw-bold' variant="outline-warning">Favorite</Button>
                 </div>
             </div>
 
             <div className='mt-5'>
-                <div className="card mb-3" style={{width: "540px"}}>
+                <div className="card mb-3" style={{ width: "1000px" }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={chef.img} className="img-fluid rounded-start" alt="..."/>
+                            <img src={chef.img} className="img-fluid rounded-start h-100" alt="..." />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h5 className="card-title">Re{chef.rname}</h5>
-                                <p className="card-text">{chef.ingredients}</p>
-                                <p className="card-text">{chef.method}</p>
-                                <p className="card-text">{chef.rating}</p>
+                                <h5 className="card-title"><span className='fw-bold'>Recipe Name:</span> {chef.rname}</h5>
+                                <p className="card-text"><span className='fw-bold'>Ingredients:</span> {chef.ingredients}</p>
+                                <p className="card-text"><span className='fw-bold'>Method:</span> {chef.method}</p>
+                                <p className="card-text"><span className='fw-bold'>Rating:</span> {chef.rating}</p>
+                                <Button className='fw-bold' variant="outline-warning">Favorite</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div className='mt-5'>
+                <div className="card mb-3" style={{ width: "1000px" }}>
+                    <div className="row g-0">
+                        <div className="col-md-4">
+                            <img src={chef.img2} className="img-fluid rounded-start h-100" alt="..." />
+                        </div>
+                        <div className="col-md-8">
+                            <div className="card-body">
+                                <h5 className="card-title"><span className='fw-bold'>Recipe Name:</span> {chef.rname2}</h5>
+                                <p className="card-text"><span className='fw-bold'>Ingredients:</span> {chef.ingredients}</p>
+                                <p className="card-text"><span className='fw-bold'>Method:</span> {chef.method}</p>
+                                <p className="card-text"><span className='fw-bold'>Rating:</span> {chef.rating}</p>
+                                <Button className='fw-bold' variant="outline-warning">Favorite</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div className='my-5'>
+                <div className="card mb-3" style={{ width: "1000px" }}>
+                    <div className="row g-0">
+                        <div className="col-md-4">
+                            <img src={chef.img3} className="img-fluid rounded-start h-100" alt="..." />
+                        </div>
+                        <div className="col-md-8">
+                            <div className="card-body">
+                                <h5 className="card-title"><span className='fw-bold'>Recipe Name:</span> {chef.rname3}</h5>
+                                <p className="card-text"><span className='fw-bold'>Ingredients:</span> {chef.ingredients}</p>
+                                <p className="card-text"><span className='fw-bold'>Method:</span> {chef.method}</p>
+                                <p className="card-text"><span className='fw-bold'>Rating:</span> {chef.rating}</p>
+                                <Button className='fw-bold' variant="outline-warning">Favorite</Button>
                             </div>
                         </div>
                     </div>
