@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
+import Chefs from '../Chefs/Chefs';
 
 const Home = () => {
     return (
@@ -16,6 +17,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                
+                <Chefs></Chefs>
         </div>
     );
 };

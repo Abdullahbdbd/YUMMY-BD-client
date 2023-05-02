@@ -11,11 +11,6 @@ const Main = () => {
             <Header></Header>
 
             <Home></Home>
-               
-           
-            <Container>
-            <h2>Main content</h2>
-            </Container>
 
             <Footer></Footer>
         </div>
