@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
@@ -8,6 +8,7 @@ import Google from './Google/Google';
 import Github from './Github/Github';
 
 const Login = () => {
+    const [error, setError] = useState('')
     const { signIn } = useContext(AuthContext)
 
     const handleLogin = event => {
@@ -18,13 +19,16 @@ const Login = () => {
         console.log(email, password)
 
         signIn(email, password)
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                setError('')
+                event.target.reset();
+            })
+            .catch(error => {
+                console.error(error.message);
+                setError('Your information is Wrong')
+            })
     }
 
     return (
@@ -44,20 +48,17 @@ const Login = () => {
                         <Form.Control type="password" name='password' placeholder="Password" required />
                     </Form.Group>
 
+                    <Form.Text className="text-danger">
+                        <p className='fs-5 fw-semibold'>{error}</p>
+                    </Form.Text>
+
+
                     <Button className='mb-2' variant="primary" type="submit">
                         Login
                     </Button>
                     <br />
                     <Form.Text className="text-secondary">
                         Don't have an Account? <Link to="/register">Register</Link>
-                    </Form.Text>
-
-                    <Form.Text className="text-danger">
-
-                    </Form.Text>
-
-                    <Form.Text className="text-success">
-
                     </Form.Text>
                 </Form>
 

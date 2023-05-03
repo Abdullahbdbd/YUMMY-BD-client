@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
@@ -6,25 +6,28 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
+    const [errors, setErrors] = useState('')
     const { createUser } = useContext(AuthContext)
 
     const handleRegister = event => {
-       event.preventDefault()
-       const form = event.target;
-       const name = form.name.value;
-       const email = form.email.value;
-       const photo = form.photo.value;
-       const password = form.password.value;
-       console.log(name, email, password, photo)
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const password = form.password.value;
+        console.log(name, email, password, photo)
 
-       createUser(email, password)
-       .then(result=>{
-        const createdUser = result.user;
-        console.log(createdUser)
-       })
-       .catch(error =>{
-        console.log(error)
-       })
+        createUser(email, password)
+            .then(result => {
+                const createdUser = result.user;
+                console.log(createdUser)
+                setErrors('')
+                event.target.reset();
+            })
+            .catch(error => {
+                setErrors('Please enter 6 characters')
+            })
     }
 
 
@@ -55,6 +58,9 @@ const Register = () => {
                         <Form.Control type="text" name='photo' placeholder="Your Photo URL" required />
                     </Form.Group>
 
+                    <Form.Text className="text-danger">
+                        <p className='fs-5 fw-semibold'>{errors}</p>
+                    </Form.Text>
 
 
                     <Button className='mb-2' variant="primary" type="submit">
