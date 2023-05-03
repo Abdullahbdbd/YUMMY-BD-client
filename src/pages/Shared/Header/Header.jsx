@@ -19,7 +19,10 @@ const Header = () => {
                     </Nav>
                     {user && <img src="" alt="" />}
                     {user ?
-                        <Button className='fw-bold' variant="outline-dark">Log out</Button> :
+                        <div>
+                            {/* <img src={} alt="" /> */}
+                            <Button className='fw-bold' variant="outline-dark">Log out</Button>
+                        </div> :
                         <Link to="/login"><Button className='fw-bold' variant="outline-dark">Login</Button></Link>}
                 </Container>
             </Navbar>

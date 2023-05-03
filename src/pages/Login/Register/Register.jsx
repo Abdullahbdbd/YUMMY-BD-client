@@ -1,17 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext)
+
+    const handleRegister = event => {
+       event.preventDefault()
+       const form = event.target;
+       const name = form.name.value;
+       const email = form.email.value;
+       const photo = form.photo.value;
+       const password = form.password.value;
+       console.log(name, email, password, photo)
+
+       createUser(email, password)
+       .then(result=>{
+        const createdUser = result.user;
+        console.log(createdUser)
+       })
+       .catch(error =>{
+        console.log(error)
+       })
+    }
+
+
     return (
         <div>
             <Header></Header>
             <Container className='w-50 m-5 '>
                 <h1 className='mb-4 fw-bold'>Please Register</h1>
 
-                <Form>
+                <Form onSubmit={handleRegister}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" name='name' placeholder="Your Name" required />
@@ -35,7 +58,7 @@ const Register = () => {
 
 
                     <Button className='mb-2' variant="primary" type="submit">
-                       Register
+                        Register
                     </Button>
                     <br />
                     <Form.Text className="text-secondary">
