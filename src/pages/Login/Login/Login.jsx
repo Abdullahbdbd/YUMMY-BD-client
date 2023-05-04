@@ -64,7 +64,7 @@ const Login = () => {
                     </Button>
                     <br />
                     <Form.Text className="text-secondary">
-                        Don't have an Account? <Link to="/register">Register</Link>
+                        Don't have an Account? Plz  <Link to="/register">Register</Link>
                     </Form.Text>
                 </Form>
 
