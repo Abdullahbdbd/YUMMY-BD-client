@@ -2,14 +2,19 @@ import React, { useContext, useState } from 'react';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Google from './Google/Google';
 import Github from './Github/Github';
 
 const Login = () => {
-    const [error, setError] = useState('')
-    const { signIn } = useContext(AuthContext)
+    const [error, setError] = useState('');
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation()
+    console.log('login page location', location)
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -24,6 +29,7 @@ const Login = () => {
                 console.log(loggedUser)
                 setError('')
                 event.target.reset();
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.error(error.message);

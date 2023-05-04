@@ -1,27 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Blog from '../../Blog/Blog';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { getAuth, updateProfile } from "firebase/auth";
 
 const Header = () => {
-    const [users, setUsers]=useState([])
-    const { user } = useContext(AuthContext);
-    const auth = getAuth();
+    const { user, logOut } = useContext(AuthContext);
 
-    updateProfile(auth.currentUser, {
-        displayName: "Jane Q. User", 
-        photoURL: "https://example.com/jane-q-user/profile.jpg"
-      })
-      .then(result => {
-       const loggedUser = result.user;
-       setUsers(loggedUser)
 
-      })
-      .catch((error) => {
-        // console.log(error)
-      });
+    const handleLogOut = () => {
+        logOut()
+        .then(() => {
+        })
+        .catch(error => console.log(error));
+    }
 
 
     return (
@@ -35,8 +26,8 @@ const Header = () => {
                     </Nav>
                     {user ?
                         <div>
-                            <img src={users.photoURL} alt="" />
-                            <Button className='fw-bold' variant="outline-dark">Log out</Button>
+                            
+                            <Button onClick={handleLogOut} className='fw-bold' variant="outline-dark">Log out</Button>
                         </div> :
                         <Link to="/login"><Button className='fw-bold' variant="outline-dark">Login</Button></Link>}
                 </Container>
