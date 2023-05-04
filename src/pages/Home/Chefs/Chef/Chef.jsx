@@ -2,11 +2,15 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { FaHandPointRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 const Chef = ({chef}) => {
     return (
         <div className='p-3'>
-            <img className='w-75 h-50 rounded' src={chef.img_url} alt="" />
+           
+           <LazyLoad height={200} offset={100}>
+            <img className='card-img-top img-fluid rounded' loading='lazy' src={chef.img_url} alt="" />
+            </LazyLoad>
             <h3 className='mt-3'>Name: {chef.name}</h3>
             <p>Experience: {chef.experience_years}</p>
             <p>Number of recipes: {chef.num_recipes}</p>

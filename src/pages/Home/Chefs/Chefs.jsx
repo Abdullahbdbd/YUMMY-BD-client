@@ -18,7 +18,7 @@ const Chefs = () => {
             
             <h1 className='text-center my-5'>OUR BD CHEFS </h1>
            <hr />
-            <div className='my-5 row row-cols-3'>
+            <div className='my-5 row row-cols-lg-3'>
                 
                 {
                     chefs.map(chef => <Chef

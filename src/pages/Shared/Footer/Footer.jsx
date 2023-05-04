@@ -5,14 +5,14 @@ import { FaFacebookSquare, FaInstagram, FaTwitter, FaYoutube } from 'react-icons
 const Footer = () => {
     return (
         <div>
-                <div className='d-flex justify-content-around bg-warning p-5'>
+                <div className='d-lg-flex justify-content-around bg-warning p-5'>
 
-                    <div>
+                    <div className='my-5'>
                         <h1>YUMMY BD</h1>
                         <p>Coming from wide range of hospitality and food service backgrounds,<br /> our Chefs make home cooking easy, healthier and exciting.Coming <br /> from wide range of hospitality and food service backgrounds.</p>
                     </div>
 
-                    <div>
+                    <div className='my-5'>
                         <h2>Categories</h2>
                         <li>Breakfast Recipes</li>
                         <li>Lunch Recipes</li>
@@ -22,7 +22,7 @@ const Footer = () => {
                         <li>Kitchen Tips</li>
                     </div>
 
-                    <div>
+                    <div className='my-5'>
                         <h2>Learn More</h2>
                         <li>About us</li>
                         <li>Team</li>
@@ -31,7 +31,7 @@ const Footer = () => {
                         <li>Content Licensing</li>
                     </div>
 
-                    <div>
+                    <div className='my-5'>
                         <h2>Get in connect</h2>
                         <p>Follow us</p>
                         <div className='d-flex justify-content-between mb-4'>
