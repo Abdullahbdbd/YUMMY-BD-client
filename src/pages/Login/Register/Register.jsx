@@ -24,6 +24,7 @@ const Register = () => {
                 console.log(createdUser)
                 setErrors('')
                 event.target.reset();
+                
             })
             .catch(error => {
                 setErrors('Please enter 6 characters')

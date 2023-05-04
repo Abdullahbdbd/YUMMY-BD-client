@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-
+    
 
     const handleLogOut = () => {
         logOut()
@@ -25,27 +25,26 @@ const Header = () => {
                         <NavLink
                             to='/'
                             className={({ isActive }) =>
-                                (isActive ? 'text-secondary text-decoration-none me-5' 
-                            : 'text-black text-decoration-none me-5') }
-                            
+                            (isActive ? 'text-secondary text-decoration-none me-5'
+                                : 'text-black text-decoration-none me-5')}
+
                         >Home</NavLink>
 
                         <NavLink
                             to='/blog'
                             className={({ isActive }) =>
-                                (isActive ? 'text-secondary text-decoration-none me-5' 
-                            : 'text-black text-decoration-none me-5') }
-                            
-                        >Blog</NavLink>
-                </Nav>
-                {user ?
-                    <div>
+                            (isActive ? 'text-secondary text-decoration-none me-5'
+                                : 'text-black text-decoration-none me-5')}
 
-                        <Button onClick={handleLogOut} className='fw-bold' variant="outline-dark">Log out</Button>
-                    </div> :
-                    <Link to="/login"><Button className='fw-bold' variant="outline-dark">Login</Button></Link>}
-            </Container>
-        </Navbar>
+                        >Blog</NavLink>
+                    </Nav>
+                    {user ?
+                        <div>
+                            <Button onClick={handleLogOut} className='fw-bold' variant="outline-dark">Log out</Button>
+                        </div> :
+                        <Link to="/login"><Button className='fw-bold' variant="outline-dark">Login</Button></Link>}
+                </Container>
+            </Navbar>
         </div >
     );
 };
